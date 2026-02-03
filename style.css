@@ -1,0 +1,92 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: radial-gradient(circle, #ff758c, #ff7eb3);
+  color: white;
+  overflow: hidden;
+  text-align: center;
+}
+
+.center {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.glow {
+  text-shadow: 0 0 10px #fff, 0 0 20px #ff4081;
+}
+
+button {
+  padding: 16px 35px;
+  font-size: 20px;
+  border: none;
+  border-radius: 40px;
+  background: #ff0055;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 0 15px #ff0055;
+  transition: 0.3s;
+}
+
+button:hover {
+  transform: scale(1.15);
+}
+
+.hidden {
+  display: none;
+}
+
+#countText {
+  font-size: 120px;
+  animation: pop 1s infinite;
+}
+
+@keyframes pop {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+}
+
+video {
+  width: 85%;
+  max-width: 500px;
+  border-radius: 20px;
+  box-shadow: 0 0 25px pink;
+  margin-top: 20px;
+}
+
+/* ❤️ Hearts */
+.hearts::before {
+  content: "❤️ 💕 💖 💘 💝 💗";
+  position: absolute;
+  width: 100%;
+  font-size: 40px;
+  animation: floatHearts 5s linear infinite;
+}
+
+@keyframes floatHearts {
+  from { top: 100%; }
+  to { top: -20%; }
+}
+
+/* 🎈 Balloons */
+.balloons::before {
+  content: "🎈 🎈 🎈 🎈 🎈 🎈";
+  position: absolute;
+  width: 100%;
+  font-size: 50px;
+  animation: floatBalloons 6s ease-in-out infinite;
+}
+
+@keyframes floatBalloons {
+  from { transform: translateY(50px); }
+  to { transform: translateY(-100px); }
+}
+
+/* 📱 Mobile Friendly */
+@media (max-width: 600px) {
+  h1 { font-size: 24px; }
+  button { font-size: 18px; }
+}
